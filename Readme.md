@@ -1,12 +1,12 @@
 # Predict return propensity using IBM Cloud Pak for Data and Watson Machine Learning
 
-As part of our Intelligent Sterling Call Center Solution, our AI Assistant can surface real time insights about the customer's orders, based on the customer's order history and previous transactions. It also provides actionable recommendations to provide easy resolutions to common customer issues leading to an enhanced customer experience. Machine Learning models and techniques are used on the aggregated customer data from multiple data sources, to gain customer insights like Customer Life time Value, Churn, Return Propensity, and Upsell Purchase Probability. These help the Call Center executive to know the customer better, and take better business decisions like Upsell, Cross-sell, Customer appeasement during a customer conversation. In this code pattern, we'll walk you through how to build a simple model to predict the propensity of an order to be returned (Return Propensity).
+As part of our Intelligent Sterling Call Center Solution, our AI Assistant can surface real time insights about the customer's orders, based on the customer's order history and previous transactions. It also provides actionable recommendations to provide easy resolutions to common customer issues leading to an enhanced customer experience. Machine Learning models and techniques are used on the aggregated customer data from multiple data sources, to gain customer insights like Customer Life time Value, Churn, Return Propensity, and Upsell Purchase Probability. These help the Call Center executive to know the customer better, and take better business decisions like Upsell, Cross-sell, and Customer appeasement during a customer conversation. In this code pattern, we'll walk you through how to build a simple model to predict the propensity of an order to be returned (Return Propensity).
 
-In the growing era of e-commerce, products being returned amounts to a large portion of the lost revenue. Hence the sooner we can identify the chances of an order being returned, the better equipped we are at reducing the loss of revenue, both directly and indirectly in the form of lost customers. In this code pattern, we leverage IBM Cloud Pak for Data with Watson Machine Learning, which enables the customers to build and deploy models in a cloud environment of their choice (Hybrid or Private). The dataset useed in this code pattern consists of curated order records obtained from [IBM Sterling Order Management](https://www.ibm.com/products/order-management).
+In the growing era of e-commerce, products being returned amounts to a large portion of the lost revenue. Hence, the sooner we can identify the chances of an order being returned, the better equipped we are at reducing the loss of revenue, both directly and indirectly in the form of lost customers. In this code pattern, we leverage IBM Cloud Pak for Data with Watson Machine Learning, which enables the customers to build and deploy models in a cloud environment of their choice (Hybrid or Private). The dataset used in this code pattern consists of curated order records obtained from [IBM Sterling Order Management](https://www.ibm.com/products/order-management).
 
 When you have completed this code pattern, you will understand how to:
 
-* Leverage ICP4D, Watson Studio and Watson Machine Learing to build and deploy machine learning models.
+* Leverage ICP4D, Watson Studio and Watson Machine Learning to build and deploy machine learning models.
 * Build a model to classify returns.
 * Generate predictions using the deployed model by making REST calls.
 
@@ -24,14 +24,14 @@ When you have completed this code pattern, you will understand how to:
 2. The data set is loaded into the Jupyter Notebook, either directly from the github repo or by uploading a copy obtained from the github repo.
 3. The data is preprocessed, machine learning models are built and saved to Watson Machine Learning on IBM Cloud Pak for Data.
 4. The machine learning model is deployed into production on the IBM Cloud Pak for Data platform and a scoring endpoint is obtained.
-5. Using the scoring endpoint, the model is used to predict the propensity of returning a product using a frontend application.
+5. Using the scoring endpoint, the model is used to predict the propensity of returning an order using a frontend application.
 
 
 # Included components
 
 * [IBM Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data): Deploy a complete data and AI private cloud with all the necessary infrastructure and software components in a matter of hours. Natively built on Red Hat OpenShift Container Platform, the IBM Cloud Pak for Data System provides optimized hardware to increase container performance, while also accelerating time to value of your data workloads.
 
-* [IBM Watson Machine Learning](https://www.ibm.com/cloud/machine-learning): Watson Machine Learning makes it easy and cost-effective to deploy AI and machine learning assets in public, private, hybrid or multicloud environments. Seamlessly scale up your AI initiatives, growing pilot projects into business-critical enterprise deployments without large up-front investments.
+* [IBM Watson Machine Learning](https://www.ibm.com/cloud/machine-learning): IBM Watson Machine Learning makes it easy and cost-effective to deploy AI and machine learning assets in public, private, hybrid or multicloud environments. Seamlessly scale up your AI initiatives, growing pilot projects into business-critical enterprise deployments without large up-front investments.
 
 * [IBM Watson Studio](https://www.ibm.com/cloud/watson-studio): Analyze data using RStudio, Jupyter, and Python in a configured, collaborative environment that includes IBM value-adds, such as managed Spark.
 
@@ -46,7 +46,7 @@ When you have completed this code pattern, you will understand how to:
 # Prerequisites
 
 * [IBM Cloud Pak for Data](https://www.ibm.com/products/cloud-pak-for-data)
-* [Watson Machine Learning Add On for Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/wsj/analyze-data/ml-install-overview.html)
+* [Watson Machine Learning Add On for IBM Cloud Pak for Data](https://www.ibm.com/support/producthub/icpdata/docs/content/SSQNUZ_current/wsj/analyze-data/ml-install-overview.html)
 
 
 # Steps
@@ -60,7 +60,7 @@ Follow these steps to setup and run this code pattern:
     1. [Load and preprocess the data](#i-load-and-preprocess-the-data)
     2. [Build the model](#ii-build-the-model)
     3. [Save and deploy the model](#iii-save-and-deploy-the-model)
-5. [Test the model](#8-test-the-model)
+5. [Test the model](#5-test-the-model)
 6. [Create a Python Flask app that uses the model](#6-create-a-python-flask-app-that-uses-the-model)
 
 
@@ -172,7 +172,7 @@ Next, click on the overflow menu for the `ReturnRiskPandas.jupyter-py36` noteboo
 
 Spend a minute looking through the sections of the notebook to get an overview.
 
-You can run cells individually by highlighting each cell, and then clicking the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (i.e. `[17]`).
+You can run cells individually by highlighting each cell, and then clicking the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (e.g. `[17]`).
 
 <p align="center">
   <img alt="Run single cell" src="https://user-images.githubusercontent.com/8854447/74751814-caf7b180-523b-11ea-89ed-aa57c9bbb3e6.png">
@@ -213,6 +213,7 @@ For building the model, we do the following:
 Cells in step 5.0 of the notebook perform the following actions:
 
 1. Create a WML API client.
+
 You first need to create a Watson Machine Learning API Client. In the cell under `Add in the credentials as per your IBM Cloud Pak for Data cluster.`, replace the existing url, username and password with the url, username and password for your ICP4D cluster.
 
 2. Create and specify a default deployment space.
@@ -229,11 +230,11 @@ Another thing we need to do before deploying the model is to create a custom pyt
 
 4. Store the model.
 
-The cells in step 5.3 walk through the process of storing the model in the default space.
+The cells in step 5.3 of the notebook walk through the process of storing the model in the default space.
 
 5. Deploying the model.
 
-The cells in step 5.4 perform the process of deploying our stored model. This process takes some time and at the end, you should get a message saying `Successfully finished deployment creation`. The message will also display the deployment_uid which is needed to test out the model.
+The cells in step 5.4 of the notebook perform the process of deploying our stored model. This process takes some time and at the end, you should get a message saying `Successfully finished deployment creation`. The message will also display the deployment_uid which is needed to test out the model.
 
 
 ## 5. Test the model
@@ -246,8 +247,12 @@ You can test the model from within the notebook by calling the client.deployment
 
 The cells under step 6.0 of the notebook perform the following actions while trying to test the model:
 * The deployment_uid is obtained.
-* A scoring payload is created. This payload will be provided as the test data to the model.
+* A scoring payload is created. The payload is the json representation of a sample order and this order's information will be provided as the test data to the model.
 * The client.deployments.score() method is called to calculate the probability of return for the order represented by the scoring payload.
+
+The result returned by the client.deployments.score() method contains the following pieces of information:
+* the prediction of the model (0 = order will not be returned, 1 = order will be returned) for the given test input data.
+* the probabilities of getting a prediction of 0 and 1 respectively for the given test input data.
 
 2. Test using the ICP4D built-in tooling.
 
@@ -297,7 +302,24 @@ curl -k -X GET https://<cluster-url>/v1/preauth/validateAuth -u <username>:<pass
 A json string will be returned with a value for "accessToken" that will look *similar* to this:
 
 ```json
-{"username":"sandy","role":"Admin","permissions":["access_catalog","administrator","manage_catalog","can_provision"],"sub":"sandy","iss":"KNOXSSO","aud":"DSX","uid":"1000331002","authenticator":"default","accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA","_messageCode_":"success","message":"success"}
+{
+    "username":"sandy",
+    "role":"Admin",
+    "permissions": [
+        "access_catalog",
+        "administrator",
+        "manage_catalog",
+        "can_provision"
+    ],
+    "sub":"sandy",
+    "iss":"KNOXSSO",
+    "aud":"DSX",
+    "uid":"1000331002",
+    "authenticator":"default",
+    "accessToken":"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNjb3R0ZGEiLCJyb2xlIjoiQWRtaW4iLCJwZXJtaXNzaW9ucyI6WyJhY2Nlc3NfY2F0YWxvZyIsImFkbWluaXN0cmF0b3IiLCJtYW5hZ2VfY2F0YWxvZyIsImNhbl9wcm92aXNpb24iXSwic3ViIjoic2NvdHRkYSIsImlzcyI6IktOT1hTU08iLCJhdWQiOiJEU1giLCJ1aWQiOiIxMDAwMzMxMDAyIiwiYXV0aGVudGljYXRvciI6ImRlZmF1bHQiLCJpYXQiOjE1NzM3NjM4NzYsImV4cCI6MTU3MzgwNzA3Nn0.vs90XYeKmLe0Efi5_3QV8F9UK1tjZmYIqmyCX575I7HY1QoH4DBhon2fa4cSzWLOM7OQ5Xm32hNUpxPH3xIi1PcxAntP9jBuM8Sue6JU4grTnphkmToSlN5jZvJOSa4RqqhjzgNKFoiqfl4D0t1X6uofwXgYmZESP3tla4f4dbhVz86RZ8ad1gS1_UNI-w8dfdmr-Q6e3UMDUaahh8JaAEiSZ_o1VTMdVPMWnRdD1_F0YnDPkdttwBFYcM9iSXHFt3gyJDCLLPdJkoyZFUa40iRB8Xf5-iA1sxGCkhK-NVHh-VTS2XmKAA0UYPGYXmouCTOUQHdGq2WXF7PkWQK0EA",
+    "_messageCode_":"success",
+    "message":"success"
+}
 ```
 
 Export the "accessToken" part of this response in the terminal window as `WML_AUTH_TOKEN`. 
@@ -316,13 +338,13 @@ Next go to the *API reference* tab on ICP4D and get the `URL` for the deployment
 export URL=<endpoint-from-ICP4D>
 ```
 
-Now run the following curl command from a terminal window. Remember to replace <filepath-to-test-input-json> with the path to the local copy of the [test-input.json](./test-input.json) file.
+Now run the following curl command from a terminal window. Remember to replace `<filepath-to-test-input-json>` with the path to the local copy of the [test_input.json](./test_input.json) file.
 
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d @<filepath-to-test-input-json> $URL
 ```
 
-Alternatively you can simply paste the contents of the [test-input.json](./test-input.json) file in the curl command as shown below:
+Alternatively you can simply paste the contents of the [test_input.json](./test_input.json) file in the curl command as shown below:
 
 ```bash
 curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header "Authorization: Bearer  $WML_AUTH_TOKEN" -d '{"input_data": [{"fields": ["BASKET_SIZE","EXTN_COMPOSITION","CARRIER_SERVICE_CODE_OL","CATEGORY","COUNTRY_OF_ORIGIN_OI","DAY_OF_MONTH","DAY_OF_WEEK","DAY_OF_YEAR","EXTN_BRAND","EXTN_DISCOUNT_ID","EXTN_IS_GIFT","EXTN_IS_PREORDER","EXTN_SHIP_TO_CITY","EXTN_SHIP_TO_COUNTRY","EXTN_SEASON","LIST_PRICE","MONTH_OF_YEAR","OTHER_CHARGES","OTHER_CHARGES_OL","REQ_DELIVERY_DATE","TOTAL_AMOUNT_USD","WEEKEND","ZIP_CODE","MTS_CTS","HOUR_OF_DAY","LOCKID"],"values": [[3, "91% Nylon, 9% Elastercell","STANDARD","Bikini","US",18,"Saturday",322,"XYZAI","None","N","N","Los Angeles","US","FW17",75,11,0.0,0.0,0,165.35,1,"Zipcode_401",24,19,277]]}]}' $URL
@@ -331,7 +353,25 @@ curl -k -X POST --header 'Content-Type: application/json' --header 'Accept: appl
 A json string similar to the one below will be returned.
 
 ```bash
-{"predictions": [{"fields": ["prediction", "probability"], "values": [[0, [0.6666666666666666, 0.3333333333333333]]]}]}
+{
+    "predictions": [
+        {
+            "fields": [
+                "prediction", 
+                "probability"
+            ], 
+            "values": [
+                [
+                    0, 
+                    [
+                        0.6666666666666666, 
+                        0.3333333333333333
+                    ]
+                ]
+            ]
+        }
+    ]
+}
 ```
 
 The first numeric value after "values" indicates the prediction of the model (a 0 indicates that the order will not be returned, a 1 indicates that the order will be returned). The next 2 values indicate the probabilities of getting a prediction of 0 or 1 respectively.
@@ -377,7 +417,7 @@ pip install -r requirements.txt
 
 ### Update environment variables
 
-It's best practice to store configurable information as environment variables, instead of hard-coding any important information. To reference our model and supply an API key, we'll pass these values in via a file that is read, the key-value pairs in this files are stored as environment variables.
+It is a best practice to store configurable information as environment variables, instead of hard-coding any important information. To reference our model and supply an API key, we will pass these values into the application via a file that is read; the key-value pairs in this file are stored as environment variables.
 
 Copy the `env.sample` file to `.env`.
 
@@ -436,7 +476,7 @@ The return propensity is returned:
 
 # Learn more
 
-* **IBM Sterling Order Management**: Interested in learning more about IBM Sterling Ordeer Management? Check out this series on how to manage [Growing Order Data](https://developer.ibm.com/components/sterling/series/growing-order-data-is-it-really-an-issue-blog-series)
+* **IBM Sterling Order Management**: Interested in learning more about IBM Sterling Ordeer Management? Check out this series on how to manage [Growing Order Data](https://developer.ibm.com/components/sterling/series/growing-order-data-is-it-really-an-issue-blog-series).
 * **Learn about IBM Sterling**: Enjoyed this Code Pattern? Check out code patterns, blogs, articlees and series on IBM Sterling products at [IBM Sterling on IBM Developer](https://developer.ibm.com/components/sterling/).
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
 * **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/).
