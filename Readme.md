@@ -106,7 +106,7 @@ cd ReturnPropensity
 
 Back on IBM Cloud Pak for Data, within your project, go to the `Assets` tab or click the `01/00` icon to open the `Load` tab.
 
-Then either drag the `TON_PREV_NEW.csv` file from the cloned repository to the window or navigate to it using `browse for files to upload`:
+Then either drag the `AggregatedOrderData.csv` file from the cloned repository to the window or navigate to it using `browse for files to upload`:
 
 <p align="center">
   <img alt="Add data set" src="https://user-images.githubusercontent.com/8854447/74562517-ff682680-4f38-11ea-9156-f98d561434c0.png">
