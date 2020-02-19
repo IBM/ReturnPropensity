@@ -117,7 +117,7 @@ Next, load the custom library by either dragging the `CustTrans-0.2.zip` file fr
 Once both files have been uploaded, you should see them listed under **Data Assets** in the Assets tab.
 
 <p align="center">
-  <img alt="View Uploaded data assets" src="https://user-images.githubusercontent.com/8854447/74562855-8917f400-4f39-11ea-8e2c-3a076a5cd07e.png">
+  <img alt="View Uploaded data assets" src="https://user-images.githubusercontent.com/8854447/74846626-c7792e80-52fe-11ea-827c-9e9bd0482593.png">
 </p>
 
 
@@ -126,13 +126,13 @@ Once both files have been uploaded, you should see them listed under **Data Asse
 Within your project on IBM Cloud Pak for Data, click the `+Add to project` button, and choose `Notebook` in the modal that opens.
 
 <p align="center">
-  <img alt="Add notebook-1" src="https://user-images.githubusercontent.com/8854447/74563276-705c0e00-4f3a-11ea-950a-b8c301dff6a5.png">
+  <img alt="Add notebook-1" src="https://user-images.githubusercontent.com/8854447/74846726-fbecea80-52fe-11ea-8e16-762fd97d0be7.png">
 </p>
 
 Alternatively, if the *Notebooks* section already exists on the **Assets** tab of your project, click `+ New notebook` to the right of *Notebooks*.
 
 <p align="center">
-  <img alt="Add notebook-2" src="https://user-images.githubusercontent.com/8854447/74564395-0002bc00-4f3d-11ea-9800-93cb3e9370cb.png">
+  <img alt="Add notebook-2" src="https://user-images.githubusercontent.com/8854447/74847327-efb55d00-52ff-11ea-98f7-53e993402208.png">
 </p>
 
 On the next screen, select the **From file** tab, choose the `Default Python 3.6` environment and click on `Choose file`. 
@@ -150,7 +150,7 @@ Navigate to and select the `ReturnRiskPandas.jupyter-py36.ipynb` file in the clo
 When the Jupyter notebook is loaded and the kernel is ready, you can start executing cells.
 
 <p align="center">
-  <img alt="Notebook loaded" src="https://user-images.githubusercontent.com/8854447/74564591-638ce980-4f3d-11ea-9f0a-57b33055a1a7.png">
+  <img alt="Notebook loaded" src="https://user-images.githubusercontent.com/8854447/74852065-1b3d4500-530a-11ea-810d-3e75cf5aac08.png">
 </p>
 
 > **Important**: *Make sure that you stop the kernel of your notebook(s) when you are done, in order to conserve memory resources!*
@@ -158,13 +158,13 @@ When the Jupyter notebook is loaded and the kernel is ready, you can start execu
 You will have to unlock the notebook before you can stop the kernel. On the **Assets** tab of your project, under the `Notebooks` section, find the row for the notebook named `ReturnRiskPandas.jupyter-py36` and click on the lock icon on the far right. In the modal that is displayed, click `Unlock`.
 
 <p align="center">
-  <img alt="Unlock notebook" src="https://user-images.githubusercontent.com/8854447/74564246-9edae880-4f3c-11ea-928b-5966efc8ad3c.png">
+  <img alt="Unlock notebook" src="https://user-images.githubusercontent.com/8854447/74852077-1ed0cc00-530a-11ea-9677-becb94792c6c.png">
 </p>
 
 Next, click on the overflow menu for the `ReturnRiskPandas.jupyter-py36` notebook (right next to where the lock icon previously was) and select `Stop Kernel`.
 
 <p align="center">
-  <img alt="Stop kernel" src="https://user-images.githubusercontent.com/8854447/74564056-1f4d1980-4f3c-11ea-8201-6e6dd5b58db9.png">
+  <img alt="Stop kernel" src="https://user-images.githubusercontent.com/8854447/74852087-22645300-530a-11ea-9863-7db93c6ac70b.png">
 </p>
 
 
@@ -175,13 +175,13 @@ Spend a minute looking through the sections of the notebook to get an overview.
 You can run cells individually by highlighting each cell, and then clicking the `Run` button at the top of the notebook. While the cell is running, an asterisk (`[*]`) will show up to the left of the cell. When that cell has finished executing a sequential number will show up (e.g. `[17]`).
 
 <p align="center">
-  <img alt="Run single cell" src="https://user-images.githubusercontent.com/8854447/74751814-caf7b180-523b-11ea-89ed-aa57c9bbb3e6.png">
+  <img alt="Run single cell" src="https://user-images.githubusercontent.com/8854447/74852097-25f7da00-530a-11ea-8815-e34d353c4f0a.png">
 </p>
 
 Alternatively, you can go to `Cell` -> `Run All` to simply run all the cells one after the other. 
 
 <p align="center">
-  <img alt="Run all cells" src="https://user-images.githubusercontent.com/8854447/74752088-27f36780-523c-11ea-8ca5-5da6fd48a096.png">
+  <img alt="Run all cells" src="https://user-images.githubusercontent.com/8854447/74852108-298b6100-530a-11ea-87df-fef293454da0.png">
 </p>
 
 
@@ -261,7 +261,7 @@ IBM Cloud Pak for Data offers built-in tooling to quickly test out Watson Machin
 For this, go to the (☰) menu and click `Analyze` -> `Analytics deployments`.
 
 <p align="center">
-  <img alt="Analytics deployments" src="https://user-images.githubusercontent.com/8854447/74755367-15c7f800-5241-11ea-99d2-e78c323004cb.png">
+  <img alt="Analytics deployments" src="https://user-images.githubusercontent.com/8854447/74852122-2e501500-530a-11ea-967e-61b6bffcc6be.png">
 </p>
 
 Click on *ReturnPropensity_Space* which is the deployment space that we had created and within which we had stored and deployed our model.
