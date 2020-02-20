@@ -476,7 +476,7 @@ The return propensity is returned:
 
 # Learn more
 
-* **IBM Sterling Order Management**: Interested in learning more about IBM Sterling Ordeer Management? Check out this series on how to manage [Growing Order Data](https://developer.ibm.com/components/sterling/series/growing-order-data-is-it-really-an-issue-blog-series).
+* **IBM Sterling Order Management**: Interested in learning more about IBM Sterling Order Management? Check out this series on how to manage [Growing Order Data](https://developer.ibm.com/components/sterling/series/growing-order-data-is-it-really-an-issue-blog-series).
 * **Learn about IBM Sterling**: Enjoyed this Code Pattern? Check out code patterns, blogs, articlees and series on IBM Sterling products at [IBM Sterling on IBM Developer](https://developer.ibm.com/components/sterling/).
 * **Artificial Intelligence Code Patterns**: Enjoyed this Code Pattern? Check out our other [AI Code Patterns](https://developer.ibm.com/technologies/artificial-intelligence/).
 * **Data Analytics Code Patterns**: Enjoyed this Code Pattern? Check out our other [Data Analytics Code Patterns](https://developer.ibm.com/technologies/data-science/).
