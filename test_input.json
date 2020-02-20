@@ -1,0 +1,64 @@
+{
+    "input_data": [
+        {
+            "fields": [
+                "BASKET_SIZE",
+                "EXTN_COMPOSITION",
+                "CARRIER_SERVICE_CODE_OL",
+                "CATEGORY",
+                "COUNTRY_OF_ORIGIN_OI",
+                "DAY_OF_MONTH",
+                "DAY_OF_WEEK",
+                "DAY_OF_YEAR",
+                "EXTN_BRAND",
+                "EXTN_DISCOUNT_ID",
+                "EXTN_IS_GIFT",
+                "EXTN_IS_PREORDER",
+                "EXTN_SHIP_TO_CITY",
+                "EXTN_SHIP_TO_COUNTRY",
+                "EXTN_SEASON",
+                "LIST_PRICE",
+                "MONTH_OF_YEAR",
+                "OTHER_CHARGES",
+                "OTHER_CHARGES_OL",
+                "REQ_DELIVERY_DATE",
+                "TOTAL_AMOUNT_USD",
+                "WEEKEND",
+                "ZIP_CODE",
+                "MTS_CTS",
+                "HOUR_OF_DAY",
+                "LOCKID"
+            ],
+            "values": [
+                [
+                    3, 
+                    "91% Nylon, 9% Elastercell",
+                    "STANDARD",
+                    "Bikini",
+                    "US",
+                    18,
+                    "Saturday",
+                    322,
+                    "XYZAI",
+                    "None",
+                    "N",
+                    "N",
+                    "Los Angeles",
+                    "US",
+                    "FW17",
+                    75,
+                    11,
+                    0.0,
+                    0.0,
+                    0,
+                    165.35,
+                    1,
+                    "Zipcode_401",
+                    24,
+                    19,
+                    277
+                ]
+            ]
+        }
+    ]
+}
