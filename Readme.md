@@ -14,7 +14,7 @@ When you have completed this code pattern, you will understand how to:
 # Architecture Diagram
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/8854447/74355360-c7bb7c00-4d8a-11ea-88b4-0e9d95363c6f.png">
+  <img src="https://user-images.githubusercontent.com/8854447/76002781-1e712d00-5ed5-11ea-89fd-d0224e5c357a.png">
 </p>
 
 
