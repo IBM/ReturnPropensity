@@ -303,7 +303,7 @@ A json string will be returned with a value for "accessToken" that will look *si
 
 ```json
 {
-    "username":"sandy",
+    "username":"<username>",
     "role":"Admin",
     "permissions": [
         "access_catalog",
@@ -311,7 +311,7 @@ A json string will be returned with a value for "accessToken" that will look *si
         "manage_catalog",
         "can_provision"
     ],
-    "sub":"sandy",
+    "sub":"<username>",
     "iss":"KNOXSSO",
     "aud":"DSX",
     "uid":"<uid>",
@@ -436,11 +436,8 @@ Edit `.env` to reference the `URL` and `TOKEN`.
 URL=
 
 # Required: Provide your web service deployment access token.
-#           This TOKEN will be the part after `accessToken`. So, your
-#           json string will look like:
-#           <redacted-auth-response>
-# The value for `TOKEN=` below will be:
-#    TOKEN=<redacted>
+#           This TOKEN will be the value from `accessToken` returned by the auth call.
+# E.g., TOKEN=<your-access-token>
 
 TOKEN=
 ```
